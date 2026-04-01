@@ -81,11 +81,11 @@ impl BuildXML for Styles {
         &self,
         stream: crate::xml::writer::EventWriter<W>,
     ) -> crate::xml::writer::Result<crate::xml::writer::EventWriter<W>> {
-        let normal = Style::new("Normal", StyleType::Paragraph).name("Normal");
+        // let normal = Style::new("Normal", StyleType::Paragraph).name("Normal");
         XMLBuilder::from(stream)
             .open_styles()?
             .add_child(&self.doc_defaults)?
-            .add_child(&normal)?
+            // .add_child(&normal)?
             .add_children(&self.styles)?
             .close()?
             .into_inner()

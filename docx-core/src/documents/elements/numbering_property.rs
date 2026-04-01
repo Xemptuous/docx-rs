@@ -1,5 +1,5 @@
-use serde::ser::{SerializeStruct, Serializer};
 use serde::Serialize;
+use serde::ser::{SerializeStruct, Serializer};
 use std::io::Write;
 
 use super::{IndentLevel, NumberingId};
@@ -41,8 +41,8 @@ impl BuildXML for NumberingProperty {
     ) -> crate::xml::writer::Result<crate::xml::writer::EventWriter<W>> {
         XMLBuilder::from(stream)
             .open_numbering_property()?
-            .add_optional_child(&self.id)?
             .add_optional_child(&self.level)?
+            .add_optional_child(&self.id)?
             .close()?
             .into_inner()
     }
