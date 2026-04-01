@@ -1,5 +1,4 @@
 use crate::documents::BuildXML;
-use crate::types::*;
 use crate::xml_builder::*;
 use std::io::Write;
 

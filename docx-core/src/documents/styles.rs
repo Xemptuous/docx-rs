@@ -3,7 +3,6 @@ use std::io::Write;
 
 use super::*;
 use crate::documents::BuildXML;
-use crate::types::*;
 use crate::xml_builder::*;
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
@@ -96,7 +95,7 @@ impl BuildXML for Styles {
 mod tests {
 
     use super::*;
-    use crate::types::StyleType;
+    use crate::{WidthType, types::StyleType};
     #[cfg(test)]
     use pretty_assertions::assert_eq;
     use std::str;
